@@ -1,0 +1,32 @@
+{% extends 'base.html'%}
+
+{% block content %}
+<section>
+<div class="new_todo">
+        <div class="box">
+          {% for to in elected %}
+            <div class="block">
+                <div class="title_text">
+                <div class="text">
+                    <h4 class="text-nowrap">{{to.title}}</h4>
+                </div>
+                <div class="icons">
+                    <a class=" p-0 fa-1x" href="{% url 'update' to.id%}" role="button" aria-expanded="false" aria-controls="collapseExample">
+                        <i class="fa-solid fa-pen"></i>
+                      </a>
+                    <a class=" p-0 fa-1x" href="{% url 'delete_elected' to.id %}" role="button" aria-expanded="false" aria-controls="collapseExample">
+                        <i class="fa-solid fa-trash"></i>
+                      </a>
+
+                          
+                      </a>
+                </div>
+            </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+
+</section>
+{% endblock content %}

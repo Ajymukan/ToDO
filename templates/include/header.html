@@ -1,0 +1,19 @@
+<header>
+    <div class="container">
+        <nav>
+            <div class="logo">To<span>Do</span></h1></div>
+            <div class="user">
+
+                {% if user.is_authenticated %}
+
+                <a href="{% url 'elected' %}">{{user.username}}</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="{% url 'logout' %}">logout</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                {% else %}
+                <a href="{% url 'login' %}">Login</a>
+                {% endif %}
+            </div>
+        </nav>
+    </div>
+</header>
+

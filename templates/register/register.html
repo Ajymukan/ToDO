@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Login</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href="{% static 'css/login.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <script src='main.js'></script> -->
+</head>
+<body>
+    <div class="row">
+        <div class="box">
+            <div class="text">
+                <h1>Register</h1>
+                <hr>
+            </div>
+            <form action="{% url 'register' %}" method="POST">
+                {% csrf_token %}
+
+                {% if messages %}
+                    {% for i in messages %}
+                        <p style="color: red; font-size: 17px;">{{ i }}</p>
+                    {% endfor %}
+                {% endif %}
+
+                <div class="input">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="text" name="username" id="" placeholder="username..." required>
+                </div>
+
+                <div class="input">
+                    <i class="fa-solid fa-envelope"></i>
+                    <input type="email" name="email" id="" placeholder="Email..." required>
+                </div>
+
+                <div class="input">
+                    <i class="fa-sharp fa-solid fa-key"></i>
+                    <input type="password" name="password1" id="myInput" placeholder="Your Password
+                    " required >
+                    <a class="fa-regular fa-eye" onclick="myFunction()" id="eye"></a>
+                </div>
+
+                <div class="input">
+                    <i class="fa-sharp fa-solid fa-key"></i>
+                    <input type="password" name="password2" id="myInput1" placeholder="Your Password" required >
+                    <a class="fa-regular fa-eye" onclick="myFunction_1()" id="eye"></a>
+                </div>
+
+                <div class="bottom">
+                <a href="#">Forget your password</a>
+                <input type="submit" value="Login">
+                <p>Not a user<a href="{% url 'login' %}"> Sign-In</a></p>
+            </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myInput");
+            if (x.type === "password") {
+            x.type = "text";
+            
+            } else {
+            x.type = "password";
+            }
+        }
+
+        function myFunction_1() {
+            var x = document.getElementById("myInput1");
+            if (x.type === "password") {
+            x.type = "text";
+            
+            } else {
+            x.type = "password";
+            }
+        }
+        </script>
+</body>
+</html>

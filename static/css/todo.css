@@ -1,0 +1,213 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #bebaba;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+.container{
+    width: 100%;
+    height: 100%;
+    padding: 0 100px;
+}
+
+/* -------- header ---------- */
+
+
+header{
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 45px;
+    background-color: #353434a4;
+    z-index: 999;
+}
+
+nav{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo{
+    font-size: 2rem;
+    color: white;
+    font-weight: bold;
+}
+
+nav .logo span{
+    color: chocolate;
+}
+
+
+/* -------- section ---------- */
+
+section{
+    width: 100%;
+    background-color: #707070;
+    border-radius: 10px;
+    min-height: 80vh;
+    margin: 20px 0;
+    box-shadow: 10px 10px 20px #333;
+    padding: 0 0 40px 0;
+    flex: 1 1 auto;
+
+}
+
+
+.create_todo{
+    width: 100%;
+    height: 150px;
+    
+    
+    
+}
+
+.create_todo form {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.create_todo form input[type='text']{
+    width: 70%;
+    height: 40px;
+    font-size:1rem ;
+    padding: 7px 15px;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    background-color: #acaaaa;
+    box-shadow: 0px 1px 7px 10px #575757;
+    color: #fff;
+}
+
+.create_todo form span{
+    position: absolute;
+    top: 39%;
+    right:17%;
+    z-index:2;
+    color: #fff;
+    font-size: 25px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.create_todo form span input{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 10%;
+    right: 17%;
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+
+.new_todo{
+    width: 100%;
+    height:auto;
+    /* margin: 40px 0; */
+    padding: 0 40px;
+}
+
+.new_todo .box .block{
+    display: flex;
+    align-items: center;
+}
+
+.new_todo .box .block .title_text{
+    width: 100%;
+    height: 70px;
+    margin: 7px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 3px solid rgb(180, 180, 180);
+    background-color: #2b2b2b4f;
+}
+
+.new_todo .box .block  .title_text .text{
+    padding: 7px ;
+    color: coral;
+    overflow: hidden;
+    margin-right: 10px;
+
+}
+
+.new_todo .box .block  .title_text .text h4{
+    margin: 0;padding: 0;
+}
+
+.new_todo .box .block .title_text .icons{
+    display: flex;
+    align-items: center;
+    color: rgb(255, 255, 255);
+    gap: 15px;
+    margin-right: 15px;
+}
+
+.new_todo .box .block .title_text .icons a{
+    color: rgb(255, 255, 255);
+    padding: 5px 70px;
+}
+
+.new_todo .box .block .bg_color{
+    background-color: #2b2b2b4f;
+}
+
+
+.collapse .card form .mb-3 label{
+    color:chocolate;
+}
+
+.collapse .card form .mb-3 .form-control{
+    border: none;
+}
+
+footer{
+    width: 100%;
+    height: 200px;
+    background-color: #575757;
+    mask-position: bottom;
+    bottom: 0;
+}
+
+
+@media (min-width:769px ){
+    .container{
+        padding: 0 70px;
+    }
+}
+
+@media (min-width:412px){
+    .container{
+        padding: 0 20px;
+    }
+}
+
+@media (max-width:411px){
+    .container{
+        padding: 0 20px;
+    }
+}
